@@ -9,11 +9,39 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var tableView: UITableView!
+    
+    private var paymentsViewModel : PaymentsViewModel!
+    private var dataSource : TableViewDataSource<TableViewCell,PaymentMethod>!
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        callToViewModelForUIUpdate()
+        
     }
-
-
+    
+    func callToViewModelForUIUpdate(){
+        
+        self.paymentsViewModel =  PaymentsViewModel()
+        self.paymentsViewModel.bindViewModelToController = {
+            self.updateDataSource()
+        }
+    }
+    
+    func updateDataSource(){
+        
+        self.dataSource = TableViewDataSource(cellIdentifier: "TableViewCell", items: self.paymentsViewModel.empData.networks.applicable, configureCell: { (cell, evm) in
+            
+            cell.logoImageView?.downloadFrom(url: evm.links.logo)
+            cell.nameLabel.text = evm.label
+        })
+        
+        DispatchQueue.main.async {
+            self.tableView.dataSource = self.dataSource
+            self.tableView.reloadData()
+        }
+    }
+    
 }
+
 
