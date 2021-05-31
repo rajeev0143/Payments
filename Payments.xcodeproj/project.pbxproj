@@ -114,12 +114,12 @@
 			isa = PBXGroup;
 			children = (
 				5D5CCD3C2665452E001C3472 /* AppDelegate.swift */,
-				5D5CCD9726654DB2001C3472 /* ImageExtension.swift */,
 				5D5CCD3E2665452E001C3472 /* SceneDelegate.swift */,
 				5D5CCD402665452E001C3472 /* ViewController.swift */,
-				5D5CCD9226654CEC001C3472 /* TableViewCell.swift */,
-				5D5CCD8E26654CBA001C3472 /* Model */,
 				5D5CCD8526654C86001C3472 /* ViewModel */,
+				5D5CCD8E26654CBA001C3472 /* Model */,
+				5D5CCD9C2665547B001C3472 /* Tableview cell */,
+				5D5CCDA026655486001C3472 /* Extension */,
 				5D5CCD7726654C26001C3472 /* Web services */,
 				5D5CCD422665452E001C3472 /* Main.storyboard */,
 				5D5CCD482665453F001C3472 /* Assets.xcassets */,
@@ -171,6 +171,22 @@
 				5D5CCD8926654CA7001C3472 /* PaymentMethods.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		5D5CCD9C2665547B001C3472 /* Tableview cell */ = {
+			isa = PBXGroup;
+			children = (
+				5D5CCD9226654CEC001C3472 /* TableViewCell.swift */,
+			);
+			path = "Tableview cell";
+			sourceTree = "<group>";
+		};
+		5D5CCDA026655486001C3472 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				5D5CCD9726654DB2001C3472 /* ImageExtension.swift */,
+			);
+			path = Extension;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
